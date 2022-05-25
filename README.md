@@ -1,2 +1,11 @@
-# Groupe de charbi_m 978963
+# Runner
 
+## Package installation
+
+>The code
+
+```` bash
+#!/bin/bash
+sudo apt update && sudo apt upgrade
+sudo apt-get install libsdl2-dev libsdl2-image-dev -y
+````
