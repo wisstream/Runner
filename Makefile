@@ -1,20 +1,21 @@
 NAME = RUNNER
 
 SRC    = source/main.c\
-      source/init.c\
-      source/input.c\
+    source/init.c\
+    source/input.c\
+    source/draw.c\
 
 OBJ = $(SRC:.c=.o)
 
 CFLAGS += -Werror -Wextra 
 CFLAGS += -I./include
 
-LIBS +=  -lSDL2_image -lSDL2_ttf
+LIBS +=  -lSDL2 -lSDL2_image
 
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC)	$(OBJ)	$(LIBS)	-o	$(NAME)	sdl2-config	--libs	--cflags
+	$(CC)	$(OBJ)	$(LIBS)	-o	$(NAME)
 
 clean: 
 	rm -f $(OBJ)

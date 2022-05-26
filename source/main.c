@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "window.h"
 #include "init.h"
+#include "input.h"
+#include "draw.h"
 
 int main()
 {
@@ -9,6 +11,13 @@ int main()
     if (initSDL(app) < 0)
     {
         return -1;
+    }
+
+    while (input_handler() == 0)
+    {
+        prepareCanvas(app);
+        presentCanvas(app);
+        SDL_Delay(17);
     }
     return 0;
 }
