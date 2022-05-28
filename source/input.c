@@ -1,4 +1,5 @@
 #include "input.h"
+#include <stdio.h>
 
 int input_handler() {
     SDL_Event event;
@@ -9,6 +10,11 @@ int input_handler() {
     {
     case SDL_QUIT:
         return -1;
+    case SDL_KEYDOWN :
+        printf("key is down\n"); 
+        break;
+    case SDL_KEYUP :
+        printf("key is up\n");
         break;
 
     default:
