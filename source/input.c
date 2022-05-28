@@ -13,14 +13,15 @@ int input_handler(Entity *entity) {
     case SDL_KEYDOWN :
         switch (event.key.keysym.sym)
         {
+       
         case SDLK_UP :
-            while (SDLK_UP)
-            {
-                entity->pos_y -= 5;
-            }
-            
-           
-
+            int test = 1;
+            break;
+        while (test == 1)
+        {
+            entity->pos_y -= 5;
+        }
+        
         case SDLK_DOWN :
             entity->pos_y += 5;
             break;
