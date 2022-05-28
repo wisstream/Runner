@@ -11,12 +11,16 @@ int input_handler(Entity *entity) {
     case SDL_QUIT:
         return -1;
     case SDL_KEYDOWN :
-        printf("key is down\n"); 
         switch (event.key.keysym.sym)
         {
         case SDLK_UP :
-            entity->pos_y -= 5;
-            break;
+            while (SDLK_UP)
+            {
+                entity->pos_y -= 5;
+            }
+            
+           
+
         case SDLK_DOWN :
             entity->pos_y += 5;
             break;
