@@ -14,7 +14,7 @@ int main()
     }
 
     player->pos_x = 100;
-    player->pos_x = 100;
+    player->pos_y = 100;
     player->width = 50;
     player->height = 50;
     player->texture = loadTexture(app, "ressource/player.png");
