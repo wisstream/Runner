@@ -18,7 +18,7 @@ int main()
     player->width = 50;
     player->height = 50;
     player->texture = loadTexture(app, "ressource/player.png");
-    SDL_Set_RenderDrawColor(app->renderer)
+    SDL_SetRenderDrawColor(app->renderer)
     while (input_handler() == 0)
     {
         prepareCanvas(app);
