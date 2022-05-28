@@ -19,7 +19,7 @@ int main()
     player->height = 50;
     player->texture = loadTexture(app, "ressource/player.png");
     SDL_SetRenderDrawColor(app->renderer, 96, 128, 255, 255);
-    while (input_handler() == 0)
+    while (input_handler(player) == 0)
     {
         prepareCanvas(app);
         drawEntity(app, player);
