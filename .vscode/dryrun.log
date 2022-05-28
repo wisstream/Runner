@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/mh/group-978963'
+cc	source/main.o source/init.o source/input.o source/draw.o	-lSDL2 -lSDL2_image	-o	RUNNER
+make: Leaving directory '/home/mh/group-978963'
+ 
