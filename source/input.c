@@ -5,7 +5,7 @@ int input_handler(Entity *entity, Win *app) {
  
     SDL_Event event;
 
-    SDL_PollEvent(&event);
+    while (SDL_PollEvent(&event)) {
     
     switch (event.type)
     {
@@ -38,4 +38,5 @@ int input_handler(Entity *entity, Win *app) {
         break;
     }
     return 0;
+}
 }
