@@ -16,7 +16,7 @@ int input_handler(Entity *entity, Win *app) {
         switch (event.key.keysym.sym)
         {
         case SDLK_UP :
-            entity->texture = loadTexture(app, "ressource/playerwalk.png");
+            entity->texture = loadTexture(app, "ressource/player.png");
             entity->pos_y -= 10; 
             break;
         case SDLK_DOWN :
