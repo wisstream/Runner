@@ -26,5 +26,6 @@ int main()
         presentCanvas(app);
         SDL_Delay(17);
     }
+    
     return 0;
 }
