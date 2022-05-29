@@ -31,6 +31,7 @@ int input_handler(Entity *entity, Win *app) {
         }
         break;
     case SDL_KEYUP :
+        entity->texture = loadTexture(app, "ressource/player.png");
         printf("key is up\n");
         break;
     default:
