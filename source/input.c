@@ -2,10 +2,11 @@
 #include <stdio.h>
 
 int input_handler(Entity *entity) {
+    SDL_EnableKeyRepeat(20,20);
     SDL_Event event;
 
     SDL_PollEvent(&event);
-
+    
     switch (event.type)
     {
     case SDL_QUIT:
@@ -16,6 +17,7 @@ int input_handler(Entity *entity) {
         {
         case SDLK_UP :
             entity->pos_y -= 5;
+         
             break;
         case SDLK_DOWN :
             entity->pos_y += 5;
