@@ -16,7 +16,6 @@ int input_handler(Entity *entity, Win *app) {
         switch (event.key.keysym.sym)
         {
         case SDLK_UP :
-            entity->texture = loadTexture(app, "ressource/player.png");
             entity->pos_y -= 10; 
             break;
         case SDLK_DOWN :
@@ -28,10 +27,11 @@ int input_handler(Entity *entity, Win *app) {
         case SDLK_RIGHT :
             entity->pos_x += 10;
             break;
+        default:
+            break;
         }
         break;
     case SDL_KEYUP :
-        entity->texture = loadTexture(app, "ressource/player.png");
         printf("key is up\n");
         break;
     default:
