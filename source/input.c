@@ -1,7 +1,7 @@
 #include "input.h"
 #include <stdio.h>
 
-int input_handler(Entity *entity) {
+int input_handler(Entity *entity, Win *app) {
  
     SDL_Event event;
 
@@ -16,8 +16,8 @@ int input_handler(Entity *entity) {
         switch (event.key.keysym.sym)
         {
         case SDLK_UP :
-            entity->pos_y -= 10;
-         
+            entity->texture = loadTexture(app, "ressource/playerwalk.png");
+            entity->pos_y -= 10; 
             break;
         case SDLK_DOWN :
             entity->pos_y += 10;

@@ -1,6 +1,7 @@
 #ifndef DRAW
 #define DRAW
 
+#include "draw.h"
 #include "window.h"
 #include <SDL2/SDL_image.h>
 
