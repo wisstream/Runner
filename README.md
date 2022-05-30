@@ -16,4 +16,7 @@ Au sein de cette fenêtre nous aurons notre jeu qui consistera en un endless Run
 #!/bin/bash
 sudo apt update && sudo apt upgrade
 sudo apt-get install libsdl2-dev libsdl2-image-dev -y
+sudo apt-get install gcc
 ````
+Cette partie du code sert à installer tout ce dont on aura besoin dans le reste du projet.  
+La première ligne sert à tenir à jour tous les packages de notre debian.
