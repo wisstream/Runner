@@ -20,3 +20,4 @@ sudo apt-get install gcc
 ````
 Cette partie du code sert à installer tout ce dont on aura besoin dans le reste du projet.  
 La première ligne sert à tenir à jour tous les packages de notre debian.
+Ensuite on a deux librairies de sdl2 à installer ainsi que gcc l'outil de compilation du code.

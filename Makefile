@@ -4,7 +4,7 @@ SRC    = source/main.c\
     source/init.c\
     source/input.c\
     source/draw.c\
-
+	source/player.c	
 OBJ = $(SRC:.c=.o)
 
 CFLAGS += -Werror -Wextra 
