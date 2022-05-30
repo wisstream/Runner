@@ -37,6 +37,12 @@ int input_handler(Entity *entity, Win *app) {
     default:
         break;
     }
+    if (entity->pos_x <= 0) entity->pos_x = 0;
+        if (entity->pos_y <= 0) entity->pos_y = 0;
+        if (entity->pos_x >= WINDOW_WIDTH - entity->width) entity->pos_x = WINDOW_WIDTH - entity->width;
+        if (entity->pos_y >= WINDOW_HEIGHT - entity->height) entity->pos_y = WINDOW_HEIGHT - entity->height;
+
+        SDL_Delay(1000/60);
     return 0;
 }
 }
