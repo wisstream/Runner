@@ -5,7 +5,7 @@
 
 #define WINDOW_WIDTH 480
 #define WINDOW_HEIGHT 360
-#define WINDOW_NAME "NOTRE JEU"
+#define WINDOW_NAME "ZOMBIE WAR"
 
 typedef struct {
     SDL_Renderer    *renderer;

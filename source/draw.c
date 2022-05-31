@@ -3,7 +3,7 @@
 
 void prepareCanvas(Win *app)
 {
-    SDL_SetRenderDrawColor(app->renderer, 96, 128, 255, 255);
+    SDL_SetRenderDrawColor(app->renderer, 0, 0, 0, 0);
     SDL_RenderClear(app->renderer);
 }
 
@@ -27,6 +27,6 @@ SDL_Texture *loadTexture(Win *app, char *img_path)
 void drawEntity(Win *app,Entity *entity)
 {
     SDL_Rect dest= {entity->pos_x, entity->pos_y, entity->width, entity->height};
-   
+
     SDL_RenderCopy(app->renderer, entity->texture, NULL, &dest);
 }
