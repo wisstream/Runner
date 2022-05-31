@@ -4,7 +4,10 @@ SRC    = source/main.c\
     source/init.c\
     source/input.c\
     source/draw.c\
-	source/player.c	
+	source/player.c\
+	source/enemy.c\
+	source/obstacle.c\
+	
 OBJ = $(SRC:.c=.o)
 
 CFLAGS += -Werror -Wextra 

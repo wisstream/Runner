@@ -1,8 +1,4 @@
 #include <stdio.h>
-#include "window.h"
-#include "init.h"
-#include "input.h"
-#include "draw.h"
 #include "player.h"
 
 Entity* initPlayer(int x, int y, int w, int h, Win* app){

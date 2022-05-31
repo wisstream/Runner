@@ -5,6 +5,8 @@
 #include "window.h"
 #include <SDL2/SDL_image.h>
 
+
+
 typedef struct Entity
 {   
     int         pos_x;
@@ -27,7 +29,9 @@ typedef struct Entity
 void prepareCanvas(Win *app);
 void presentCanvas(Win *app);
 SDL_Texture *loadTexture(Win *app, char *img_path);
-void drawEntity(Win *app,Entity *entity);
 
+
+int check_collision( SDL_Rect *A, SDL_Rect *B);
+int drawEntity(Win *app, Entity *entity, Entity *enemy, Entity *obstacle);
 
 #endif

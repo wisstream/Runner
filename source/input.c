@@ -1,8 +1,8 @@
 #include "input.h"
 #include <stdio.h>
 
-int input_handler(Entity *entity, Win *app) {
- 
+int input_handler(Entity *entity, Entity *enemy, Entity *obstacle) {
+
     SDL_Event event;
 
     while (SDL_PollEvent(&event)) {
@@ -12,7 +12,7 @@ int input_handler(Entity *entity, Win *app) {
     case SDL_QUIT:
         return -1;
     case SDL_KEYDOWN :
-        printf("key is down\n");
+        
         switch (event.key.keysym.sym)
         {
         case SDLK_UP :
@@ -30,13 +30,17 @@ int input_handler(Entity *entity, Win *app) {
         default:
             break;
         }
+
         break;
     case SDL_KEYUP :
-        printf("key is up\n");
+        
         break;
     default:
         break;
     }
+    enemy->pos_x -= 7;
+    obstacle->pos_x-= 4;
+
     if (entity->pos_x <= 0) entity->pos_x = 0;
         if (entity->pos_y <= 0) entity->pos_y = 0;
         if (entity->pos_x >= WINDOW_WIDTH - entity->width) entity->pos_x = WINDOW_WIDTH - entity->width;
@@ -44,5 +48,5 @@ int input_handler(Entity *entity, Win *app) {
 
         SDL_Delay(1000/60);
     return 0;
-}
+    }
 }

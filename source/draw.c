@@ -23,10 +23,66 @@ SDL_Texture *loadTexture(Win *app, char *img_path)
     return texture;
 }
 
-
-void drawEntity(Win *app,Entity *entity)
+int check_collision( SDL_Rect *A, SDL_Rect *B)
 {
-    SDL_Rect dest= {entity->pos_x, entity->pos_y, entity->width, entity->height};
+    //Les cotes des rectangles
+    int leftA, leftB;
+    int rightA, rightB;
+    int topA, topB;
+    int bottomA, bottomB;
 
-    SDL_RenderCopy(app->renderer, entity->texture, NULL, &dest);
+    //Calcul les cotes du rectangle A
+    leftA = A->x;
+    rightA = A->x + A->w;
+    topA = A->y;
+    bottomA = A->y + A->h;
+
+    //Calcul les cotes du rectangle B
+    leftB = B->x;
+    rightB = B->x + B->w;
+    topB = B->y;
+    bottomB = B->y + B->h;
+    //Tests de collision
+    if( bottomA <= topB )
+    {
+        return 0;
+    }
+
+    if( topA >= bottomB )
+    {
+        return 0;
+    }
+
+    if( rightA <= leftB )
+    {
+        return 0;
+    }
+
+    if( leftA >= rightB )
+    {
+        return 0;
+    }
+
+    //Si conditions collision detectee
+    return 1;
+}
+
+int drawEntity(Win *app, Entity *entity, Entity *enemy, Entity *obstacle)
+{
+    SDL_Rect destination = {entity->pos_x, entity->pos_y, entity->width, entity->height};
+    SDL_Rect minion1 = {enemy->pos_x, enemy->pos_y, enemy->width, enemy->height};
+    SDL_Rect minion2 = {obstacle->pos_x, obstacle->pos_y, obstacle->width, obstacle->height};
+    SDL_RenderCopy(app->renderer, entity->texture, NULL, &destination);
+    SDL_RenderCopy(app->renderer, enemy->texture, NULL, &minion1);
+    SDL_RenderCopy(app->renderer, obstacle->texture, NULL, &minion2);
+
+    if (check_collision(&destination, &minion1)) {
+        printf ("C'est perdu !!");
+        return -1;
+    }
+    if (check_collision(&destination, &minion2)){
+        printf ("c'est perdu !!");
+        return -1;
+    }
+    return 0;
 }
