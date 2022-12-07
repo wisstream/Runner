@@ -7,7 +7,7 @@ SRC    = source/main.c\
 	source/player.c\
 	source/enemy.c\
 	source/obstacle.c\
-	
+
 OBJ = $(SRC:.c=.o)
 
 CFLAGS += -Werror -Wextra 
